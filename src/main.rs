@@ -74,14 +74,39 @@
 
 
 
+// fn main() {
+//     use std::collections::HashMap;
+
+//     let mut scores = HashMap::new();
+
+//     scores.insert(String::from("Blue"), 10);
+//     scores.insert(String::from("Yellow"), 50);
+// }
+
+
+#[derive(Debug)]
+
+struct Dev {
+    name: String,
+    age: u8, 
+    github: String
+}
+
 fn main() {
-    let v = vec![1, 2, 3, 4, 5];
+    use std::collections::HashMap;
 
-    let third: &i32 = &v[2];
-    println!("The third element is {}", third);
+    let mut scores = HashMap::new();
 
-    match v.get(2) {
-        Some(third) => println!("The third element is {}", third),
-        None => println!("There is no third element."),
-    }
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Blue"), 25);
+
+    println!("{:?}", scores);
+
+    let dev_james:Dev = Dev {
+        name: String::from("James Jin"),
+        age: 20,
+        github: String::from("https://github.com/SmartDever02")
+    };
+
+    println!("{:?}", dev_james);
 }
