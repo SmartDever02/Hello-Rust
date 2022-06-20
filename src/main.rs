@@ -24,25 +24,64 @@
 //     );
 // }#[derive(Debug)]
 
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
+// struct Rectangle {
+//     width: u32,
+//     height: u32,
+// }
 
-impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
-}
+// impl Rectangle {
+//     fn area(&self) -> u32 {
+//         self.width * self.height
+//     }
+// }
+
+// fn main() {
+//     let rect1 = Rectangle {
+//         width: 30,
+//         height: 50,
+//     };
+
+//     println!(
+//         "The area of the rectangle is {} square pixels.",
+//         rect1.area()
+//     );
+// }
+
+
+
+// struct Rectangle {
+//     width: u32,
+//     height: u32,
+// }
+
+// impl Rectangle {
+//     fn square(size: u32) -> Rectangle {
+//         Rectangle {
+//             width: size,
+//             height: size,
+//         }
+//     }
+//     fn display(&self) {
+//         println!("{}", self.width * self.height)
+//     }
+// }
+
+// fn main() {
+//     let sq = Rectangle::square(3);
+//     // sq.display();
+//     Rectangle::display(&sq);
+// }
+
+
 
 fn main() {
-    let rect1 = Rectangle {
-        width: 30,
-        height: 50,
-    };
+    let v = vec![1, 2, 3, 4, 5];
 
-    println!(
-        "The area of the rectangle is {} square pixels.",
-        rect1.area()
-    );
+    let third: &i32 = &v[2];
+    println!("The third element is {}", third);
+
+    match v.get(2) {
+        Some(third) => println!("The third element is {}", third),
+        None => println!("There is no third element."),
+    }
 }
