@@ -84,29 +84,50 @@
 // }
 
 
-#[derive(Debug)]
 
-struct Dev {
-    name: String,
-    age: u8, 
-    github: String
-}
+
+
+
+// #[derive(Debug)]
+
+// struct Dev {
+//     name: String,
+//     age: u8, 
+//     github: String
+// }
+
+// fn main() {
+//     use std::collections::HashMap;
+
+//     let mut scores = HashMap::new();
+
+//     scores.insert(String::from("Blue"), 10);
+//     scores.insert(String::from("Blue"), 25);
+
+//     println!("{:?}", scores);
+
+//     let dev_james:Dev = Dev {
+//         name: String::from("James Jin"),
+//         age: 20,
+//         github: String::from("https://github.com/SmartDever02")
+//     };
+
+//     println!("{:?}", dev_james);
+// }
+
 
 fn main() {
-    use std::collections::HashMap;
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
 
-    let mut scores = HashMap::new();
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result);
+}
 
-    scores.insert(String::from("Blue"), 10);
-    scores.insert(String::from("Blue"), 25);
-
-    println!("{:?}", scores);
-
-    let dev_james:Dev = Dev {
-        name: String::from("James Jin"),
-        age: 20,
-        github: String::from("https://github.com/SmartDever02")
-    };
-
-    println!("{:?}", dev_james);
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
 }
